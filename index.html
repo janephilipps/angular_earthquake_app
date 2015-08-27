@@ -16,7 +16,9 @@
   <div ng-controller="MainCtrl">
     <div class="container">
       {{ test }}
-      {{ 1 + 2 }}
+      {{ earthquakes }}
+      {{ earthquakes.metadata.count }}
+      {{ earthquakes.features[0].properties.mag }}
     </div>
   </div>
   <!-- <div ng-view></div> -->
