@@ -19,6 +19,10 @@ angular.module('earthquakeApp', [])
       $scope.latitude = position.coords.latitude;
       $scope.longitude = position.coords.longitude;
       console.log("Latitude: " + $scope.latitude + " Longitude: " + $scope.longitude);
+      console.log(position.timestamp);
+      var timestamp = position.timestamp;
+      var pubDate = new Date(timestamp);
+      console.log(pubDate);
       $scope.searchEarthquakes();
     }
 
