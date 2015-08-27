@@ -14,11 +14,20 @@
 <body ng-app="earthquakeApp">
   <top-navbar></top-navbar>
   <div ng-controller="MainCtrl">
+
     <div class="container">
-      {{ test }}
-      {{ earthquakes }}
-      {{ earthquakes.metadata.count }}
-      {{ earthquakes.features[0].properties.mag }}
+      <form class="navbar-form navbar-left" role="search" ng-submit="getLocation()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <br>
+      <br>
+      <br>
+      <!-- <p>Earthquakes: {{ earthquakes }}</p> -->
+      <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p>
+      <p><b>Magnitude:</b> {{ earthquakes[0].features[0].properties.mag }}</p>
     </div>
   </div>
   <!-- <div ng-view></div> -->
