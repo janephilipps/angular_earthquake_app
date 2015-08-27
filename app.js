@@ -1,7 +1,7 @@
 angular.module('earthquakeApp', [])
   
   .controller("MainCtrl", ['$scope', function ($scope) {
-
+    $scope.test = "Hello world!";
   }])
 
   .controller("TopNavbarCtrl", ['$scope', function ($scope) {
