@@ -18,16 +18,23 @@
     <div class="container">
       <form class="navbar-form navbar-left" role="search" ng-submit="getLocation()">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search by City">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <form class="navbar-form navbar-left" ng-submit="getLocation()">
+        <button type="submit" class="btn btn-default">Use Current Location</button>
       </form>
       <br>
       <br>
       <br>
+      <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
+        <p><b>Magnitude:</b> {{ e[$index].properties.mag }}</p>
+      </div>
       <!-- <p>Earthquakes: {{ earthquakes }}</p> -->
-      <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p>
-      <p><b>Magnitude:</b> {{ earthquakes[0].features[0].properties.mag }}</p>
+      <!-- <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p> -->
+      <!-- <p><b>Magnitude:</b> {{ earthquakes[0].features[0].properties.mag }}</p>
+      <p><b>Place:</b> {{ earthquakes[0].features[0].properties.place }}</p> -->
     </div>
   </div>
   <!-- <div ng-view></div> -->

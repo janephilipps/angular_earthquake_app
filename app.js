@@ -36,7 +36,7 @@ angular.module('earthquakeApp', [])
         .success(function (data) {
 
           // On success, create new var earthquakeData
-          var earthquakeData = data;
+          var earthquakeData = data.features;
 
           // Push earthquakeData into earthquakes
           $scope.earthquakes.push(earthquakeData);
