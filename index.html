@@ -32,11 +32,7 @@
       <br>
       <br>
       <br>
-      <map center="{{ latitude }},{{ longitude }}">
-        <marker
-        position="[{{ latitude }}, {{ longitude }}]"
-        title="Hello Marker"
-        visible="true"></marker>
+      <map center="36.1215,-115.1739" zoom=2>
         <marker ng-repeat="e in earthquakes"
         position="[{{ e.geometry.coordinates[1] }}, {{ e.geometry.coordinates[0] }}]"
         title="earthquake"
