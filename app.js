@@ -1,9 +1,13 @@
-angular.module('earthquakeApp', [])
+angular.module('earthquakeApp', ['ngMap'])
 
   .controller("MainCtrl", ['$scope', '$http', function ($scope, $http) {
-    $scope.test = "Hello world!";
 
     $scope.earthquakes = [];
+
+    $scope.map;
+
+    $scope.latitude = 37.7910569;
+    $scope.longitude = -122.40079109999999;
 
     $scope.searchByCity = function (city) {
 
@@ -50,10 +54,13 @@ angular.module('earthquakeApp', [])
 
           // On success, create new var earthquakeData
           var earthquakeData = data.features;
-          console.log(earthquakeData);
 
           // Push earthquakeData into earthquakes
           $scope.earthquakes = earthquakeData;
+
+          // $scope.$on('mapInitialized', function(event, map) {
+          //   map.setCenter("San Francisco");
+          // });
 
         })
         .error(function (data) {
