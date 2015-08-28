@@ -29,7 +29,9 @@
       <br>
       <br>
       <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
+        <p><b>Location:</b> {{ e.properties.place }}</p>
         <p><b>Magnitude:</b> {{ e.properties.mag }}</p>
+        <p><b>Time:</b> {{ e.properties.updated }}</p>
       </div>
       <!-- <p>Earthquakes: {{ earthquakes }}</p> -->
       <!-- <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p> -->
