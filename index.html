@@ -32,10 +32,11 @@
       <br>
       <br>
       <br>
-      <map center="36.1215,-115.1739" zoom=2>
+      <map center="{{ latitude }},{{ longitude }}" zoom=2>
         <marker ng-repeat="e in earthquakes"
         position="[{{ e.geometry.coordinates[1] }}, {{ e.geometry.coordinates[0] }}]"
         title="earthquake"
+        animation="Animation.DROP"
         visible="true"></marker>
       </map>
       <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
