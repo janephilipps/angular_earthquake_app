@@ -32,11 +32,18 @@
       <br>
       <br>
       <br>
-      <map center="{{latitude }},{{longitude}}" />
+      <map center="{{ latitude }},{{ longitude }}">
+        <marker
+        position="[{{ latitude }}, {{ longitude }}]"
+        title="Hello Marker"
+        visible="true"></marker>
+      </map>
       <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
         <p><b>Location:</b> {{ e.properties.place }}</p>
         <p><b>Magnitude:</b> {{ e.properties.mag }}</p>
         <p><b>Time:</b> {{ e.properties.updated }}</p>
+        <p><b>Longitude:</b> {{e.geometry.coordinates[0] }}</p>
+        <p><b>Latitude:</b> {{e.geometry.coordinates[1] }}</p>
       </div>
       <!-- <p>Earthquakes: {{ earthquakes }}</p> -->
       <!-- <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p> -->
