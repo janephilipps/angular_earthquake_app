@@ -16,7 +16,7 @@
   <div ng-controller="MainCtrl">
 
     <div class="container">
-      <form class="navbar-form navbar-left" role="search" ng-submit="getLocation()">
+      <form class="navbar-form navbar-left" role="search" ng-submit="searchByCity()">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search by City">
         </div>
@@ -29,7 +29,7 @@
       <br>
       <br>
       <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
-        <p><b>Magnitude:</b> {{ e[$index].properties.mag }}</p>
+        <p><b>Magnitude:</b> {{ e.properties.mag }}</p>
       </div>
       <!-- <p>Earthquakes: {{ earthquakes }}</p> -->
       <!-- <p><b>Count:</b> {{ earthquakes[0].metadata.count }}</p> -->
