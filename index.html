@@ -18,7 +18,6 @@
 <body ng-app="earthquakeApp">
   <top-navbar></top-navbar>
   <div ng-controller="MainCtrl">
-
     <div class="container">
       <form class="navbar-form navbar-left" role="search" ng-submit="searchByCity()">
         <div class="form-group">
@@ -35,10 +34,13 @@
       <map center="{{ latitude }},{{ longitude }}" zoom=2>
         <marker ng-repeat="e in earthquakes"
         position="[{{ e.geometry.coordinates[1] }}, {{ e.geometry.coordinates[0] }}]"
-        title="earthquake"
+        title="{{ e.properties.title }}"
         animation="Animation.DROP"
         visible="true"></marker>
       </map>
+      <div>
+        <h3>Total Earthquakes: {{ count }}</h3>
+      </div>
       <div ng-repeat="e in earthquakes track by $index" style="margin: 10px;">
         <p><b>Location:</b> {{ e.properties.place }}</p>
         <p><b>Magnitude:</b> {{ e.properties.mag }}</p>
