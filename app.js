@@ -50,7 +50,7 @@ angular.module('earthquakeApp', ['ngMap'])
       // var city = $scope.city;
 
       // Initialize API call
-      $http.get('http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2015-08-28&endtime=2015-08-29&latitude=' + $scope.latitude + '&longitude=' + $scope.longitude + '&maxradius=100')
+      $http.get('http://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2015-08-29&endtime=2015-08-30&latitude=' + $scope.latitude + '&longitude=' + $scope.longitude + '&maxradius=100')
         .success(function (data) {
 
           // On success, create new var earthquakeData
