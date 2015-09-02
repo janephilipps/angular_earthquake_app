@@ -10,20 +10,20 @@ angular.module('earthquakeApp', ['ngMap'])
     $scope.latitude = 37.7910569;
     $scope.longitude = -122.40079109999999;
 
-    $scope.searchByCity = function (city) {
+    // $scope.searchByCity = function (city) {
 
-      // Initialize city varible
-      var city = $scope.city;
+    //   // Initialize city varible
+    //   var city = $scope.city;
 
-      // Call OpenWeather API to get lat & lon coordinates
-      // Set url var
-      var url = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q=";
+    //   // Call OpenWeather API to get lat & lon coordinates
+    //   // Set url var
+    //   var url = "http://api.openweathermap.org/data/2.5/weather?mode=json&cnt=7&units=imperial&callback=JSON_CALLBACK&q=";
 
-      $http.jsonp(url + $scope.city)
-        .success(function(data) {
-          $scope.coords = data;
-        });
-    }
+    //   $http.jsonp(url + $scope.city)
+    //     .success(function(data) {
+    //       $scope.coords = data;
+    //     });
+    // }
 
     $scope.getLocation = function () {
         if (navigator.geolocation) {
